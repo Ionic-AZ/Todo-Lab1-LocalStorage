@@ -10,7 +10,7 @@ Objectives:
 
 ##Section 1: Setup
 
-###Section 1.1: t Install Git (Windows Only)
+###Section 1.1: Install Git (Windows Only)
 
 The default Ionic templates are downloaded from git when you start a new project.
 
