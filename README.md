@@ -207,7 +207,7 @@ The new project modal save button is already wired up to call the newProject fun
 		if(projectTitle) {
 		}	
 
-1. Call the Project.newProject function, pass the project title into it and store the returned value from the function in a variable called newProject.
+1. Call the Projects.newProject function, pass the project title into it and store the returned value from the function in a variable called newProject.
 1. Add the newProject to the $scope.projects 
 	* **Hint:** $scope.projects is an array so you need to push to the array
 1. Call the Projects.save function and save the $scope.projects.
