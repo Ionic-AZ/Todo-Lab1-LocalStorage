@@ -244,7 +244,7 @@ Before we can add a new task, we need to know which project to add them to which
 1. Inside the AppController function create a new function on the scope called selectProject that takes in 2 parameters called project and index.
 	* Set a variable on the scope called activeProject and set it to the project parameter.
 	* Call the Projects setLastActiveIndex and pass it the index parameer.
-	* Now we need to close the menu.  You can do this 2 ways:  Add the menu-close attribute to the ion-item in the menu.html file or call the $ionicSideMenuDelete.toggleLeft();
+	* Now we need to close the menu.  You can do this 2 ways:  Add the menu-close attribute to the ion-item in the menu.html file or call the $ionicSideMenuDelegate.toggleLeft();
 1. Save the AppController.js file
 1. Open the www\templates\menu.html
 1. Find the ion-item that is showing all of the projects. 
