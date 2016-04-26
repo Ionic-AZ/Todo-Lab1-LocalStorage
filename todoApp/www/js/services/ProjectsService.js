@@ -2,8 +2,8 @@
 		.module('todoApp')
 		.factory('Projects', Projects);
 
-	Projects.$inject = [];
-	function Projects() {
+	Projects.$inject = ['$localstorage'];
+	function Projects($localstorage) {
 		var service = {
 			all: all,
 			save: save,
@@ -20,10 +20,11 @@
 		////////////////
 		function all() {
 			console.log("Projects.all");
-			var projectString = window.localStorage['projects'];
-			if (projectString) {
-				globalProjects = angular.fromJson(projectString); 				
-			}
+			// var projectString = window.localStorage['projects'];
+      var projectString = $localstorage.getObject('projects');
+			// if (projectString) {
+			// 	globalProjects = angular.fromJson(projectString); 				
+			// }
 			return globalProjects;
 		}
 		
@@ -52,7 +53,8 @@
 
 		function save(projects) {
 			console.log("Projects.save");
-      		window.localStorage['projects'] = angular.toJson(projects);
+      // window.localStorage['projects'] = angular.toJson(projects);
+      $localstorage.setObject('projects', projects);
 		}
 
 		function newProject(projectTitle) {
@@ -66,12 +68,14 @@
 		
 		function getLastActiveIndex() {
 			console.log("Projects.getLastActiveIndex");
-			return parseInt(window.localStorage['lastActiveProject']) || 0;
+			// return parseInt(window.localStorage['lastActiveProject']) || 0;
+      return parseInt($localstorage.get('lastActiveProject'))
 		}
 		
 		function setLastActiveIndex(index) {
 			console.log("Projects.setLastActiveIndex");
-			window.localStorage['lastActiveProject'] = index;
+			// window.localStorage['lastActiveProject'] = index;
+      $localstorage.set('lastActiveProject', index);
 		}
 		
 	}
