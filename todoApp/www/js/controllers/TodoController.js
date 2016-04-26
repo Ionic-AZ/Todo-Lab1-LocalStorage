@@ -24,10 +24,10 @@
 		
 		$scope.createTask = function (task) {
 			console.log('TodoController.createTask');		
+			console.log("task", task);
 			if (!$scope.activeProject || !task) {
 				return;
 			}
-
 			$scope.activeProject.tasks.push(task);
 			Projects.save($scope.projects);
 			$scope.taskModal.hide();
