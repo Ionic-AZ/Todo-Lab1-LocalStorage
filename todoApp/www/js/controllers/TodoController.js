@@ -27,9 +27,12 @@
 			console.log("task", task);
 			if (!$scope.activeProject || !task) {
 				return;
-			}
-			$scope.activeProject.tasks.push(task);
+      }
+
+      var newTask = { "title": task.title };
+			$scope.activeProject.tasks.push(newTask);
 			Projects.save($scope.projects);
-			$scope.taskModal.hide();
+      $scope.taskModal.hide();
+      task.title = '';
 		}
 	}
